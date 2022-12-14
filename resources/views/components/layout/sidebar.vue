@@ -26,7 +26,7 @@
             v-if="is_admin"
           />
           <li class="menu-title">Trading</li>
-          <SidebarItem
+          <!-- <SidebarItem
             name="Trades History"
             :url="route(`${is_admin ? 'admin' : 'user'}.trades.index`)"
             icon="table"
@@ -36,11 +36,16 @@
             :url="route('user.trades.view')"
             icon="server"
             v-if="!is_admin"
-          />
-          <SidebarItem
+          /> -->
+          <!-- <SidebarItem
             :name="botsMenu"
             :url="route(`${is_admin ? 'admin' : 'user'}.bots.index`)"
             icon="cpu"
+          /> -->
+          <SidebarItem
+            :name="subscriptions"
+            :url="route(`${is_admin ? 'admin.plans.index' : 'user.subscriptions.plans'}`)"
+            icon="package"
           />
           <li class="menu-title">Transactions</li>
           <SidebarItem
@@ -91,12 +96,12 @@
             icon="plus-square"
             v-if="is_admin"
           />
-          <SidebarItem
-            name="Plans"
-            :url="route('admin.plans.index')"
-            icon="package"
-            v-if="is_admin"
-          />
+          
+          <!-- <SidebarItem
+            name="P"
+            :url="route(`${is_admin ? 'admin' : 'user'}.bots.index`)"
+            icon="cpu"
+          /> -->
           <SidebarItem
             name="Tradeable assets"
             :url="route('admin.tradeables.index')"
@@ -133,8 +138,9 @@
 
 const is_admin = computed(()=>usePage().props.value.auth.user.is_admin == 1);
 
-
-const botsMenu = computed(() => is_admin == true ? 'Trade Bots' : 'Trade Bot');
+// console.log(is_admin);
+const botsMenu = computed(() => is_admin == 1 ? 'Trading Bots' : 'Trade Bot');
+const subscriptions = computed(()=>is_admin==1 ? 'Plans': 'Subscription');
 
   onMounted((_) => {
     new MetisMenu('#side-menu');

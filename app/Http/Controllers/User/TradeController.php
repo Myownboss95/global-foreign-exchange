@@ -36,14 +36,14 @@ class TradeController extends Controller
         return response()->json(['data' => $tradeables]);
     }
 
-
+ 
     public function store(Request $request)
     {
         $this->middleware('active');
         $data = $request->validate(['amount' => ['required', 'numeric'],
             'type' => ['required', 'in:buy,sell'],
             'stop_loss' => ['nullable'],
-            'tradeable_id' => ['required', 'numeric'],
+            'tradeable_id' => ['required', 'numeric'], 
         ]);
         $user = User::findOrFail(auth()->user()->id);
         $account = $user->accounts()->where('type', 'invested')->first();

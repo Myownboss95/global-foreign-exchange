@@ -15,7 +15,7 @@ class EnsureUserIsActive
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next)
-    {
+    { 
         $user = $request->user();
         if (!$user->is_admin) {
             if ($user->status == 'pending') {

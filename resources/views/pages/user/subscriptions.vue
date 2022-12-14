@@ -8,7 +8,7 @@
             <div class="card-body">
                 <div class="p-2">
                     <h5 class="font-size-16">{{plan.name}}</h5>
-                    <h5 class="mt-3">{{format_money(plan.min_investment)}} <span class="text-muted font-size-16 fw-medium">/ Trade tenure</span></h5>
+                    <h5 class="mt-3">{{format_money(plan.min_investment)}} - {{format_money(plan.max_investment)}} <small class="text-muted font-size-14 fw-medium">Investment Amount</small></h5>
                     <!-- <p class="text-muted mt-3 font-size-15">For small teams trying out Minia for an unlimited
                         period of time</p> -->
                     <div class="mt-4 pt-2 text-muted">
