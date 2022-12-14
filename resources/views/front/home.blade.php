@@ -310,7 +310,7 @@
             <div class="uk-width-3-4@m">
                 <div class="uk-grid-collapse  uk-child-width-1-2@m in-wave-pricing" data-uk-grid>
                     @foreach ($plans as $plan)
-                    <div style="border:1px solid #fcb42d">
+                    <div style="border:1px solid #fcb42d; margin:5px 0px">
                         <div class="uk-card uk-card-default uk-card-body uk-box-shadow-medium">
                             <p class="uk-text-small uk-text-uppercase">funding<span class="uk-label uk-border-pill uk-text-small uk-margin-small-left">${{$plan->min_investment.'-$'.$plan->max_investment}} </span></p>
                             
