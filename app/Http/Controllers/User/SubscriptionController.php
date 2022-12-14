@@ -12,7 +12,7 @@ class SubscriptionController extends Controller
 {
     public function plans()
     {
-        $plans = Plan::latest()->with('features')->get();
+        $plans = Plan::oldest()->with('features')->get();
         return inertia('user.subscriptions', [
             'plans' => $plans
         ]);

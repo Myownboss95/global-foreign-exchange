@@ -301,46 +301,40 @@
 </div>
 <!-- section content end -->
 <!-- section content begin -->
-{{-- <div class="uk-section uk-padding-large">
+<div class="uk-section uk-padding-large">
     <div class="uk-container in-wave-4">
         <div class="uk-grid uk-flex uk-flex-center">
             <div class="uk-width-1-1 uk-text-center">
-                <h1 class="uk-margin-medium-bottom"><span class="in-highlight">Complete</span> package for every
-                    traders</h1>
+                <h1 class="uk-margin-medium-bottom"><span class="in-highlight">Complete</span> package for every traders</h1>
             </div>
             <div class="uk-width-3-4@m">
                 <div class="uk-grid-collapse  uk-child-width-1-2@m in-wave-pricing" data-uk-grid>
-                    <div>
+                    @foreach ($plans as $plan)
+                    <div style="border:1px solid #fcb42d">
                         <div class="uk-card uk-card-default uk-card-body uk-box-shadow-medium">
-                            <p class="uk-text-small uk-text-uppercase">Minimum funding<span
-                                    class="uk-label uk-border-pill uk-text-small uk-margin-small-left">USD 200</span>
-                            </p>
-                            <h2 class="uk-margin-top uk-margin-remove-bottom">Classic account</h2>
-                            <p class="uk-text-lead uk-text-muted uk-margin-remove-top">Benefit from industry-leading
-                                entry prices</p>
+                            <p class="uk-text-small uk-text-uppercase">funding<span class="uk-label uk-border-pill uk-text-small uk-margin-small-left">${{$plan->min_investment.'-$'.$plan->max_investment}} </span></p>
+                            
+                            <h2 class="uk-margin-top uk-margin-remove-bottom">{{ $plan->name }} Plan</h2>
+                            <p class="uk-text-lead uk-text-muted uk-margin-remove-top">{{ $plan->tenure}} days</p>
                             <hr>
                             <ul class="uk-list uk-list-bullet">
-                                <li>One of the established industry leaders</li>
-                                <li>Three decades of trading know-how</li>
-                                <li>Award-winning customer service*</li>
-                                <li>Highly-regarded trader education*</li>
-                                <li>Advanced risk management</li>
-                                <li>Tax-free spread betting profits</li>
-                                <li>Low minimum deposit</li>
+                                <li> {{ $plan->tenure}} days trading tenure.</li>
+                                <li>{{ $plan->bonus}}% investment bonus</li>
+                                @foreach ($plan->features as $features )
+                                <li>{{ $features->name }}</li>
+                                @endforeach
+                                
                             </ul>
-                            <a href="/register"
-                                class="uk-button uk-button-default uk-border-rounded uk-align-center">Open an account<i
-                                    class="fas fa-chevron-circle-right fa-xs uk-margin-small-left"></i></a>
+                            <a href="{{ route('register')}}" class="uk-button uk-button-default uk-border-rounded uk-align-center">Open an account<i class="fas fa-chevron-circle-right fa-xs uk-margin-small-left"></i></a>
                         </div>
                     </div>
-                    <div>
+                    @endforeach
+                    
+                    {{-- <div>
                         <div class="uk-card uk-card-default uk-card-body uk-box-shadow-large">
-                            <p class="uk-text-small uk-text-uppercase">Minimum funding<span
-                                    class="uk-label uk-border-pill uk-text-small uk-margin-small-left">USD 500</span>
-                            </p>
+                            <p class="uk-text-small uk-text-uppercase">Minimum funding<span class="uk-label uk-border-pill uk-text-small uk-margin-small-left">USD 500</span></p>
                             <h2 class="uk-margin-top uk-margin-remove-bottom">Platinum account</h2>
-                            <p class="uk-text-lead uk-text-muted uk-margin-remove-top">Receive even tighter spreads and
-                                commissions</p>
+                            <p class="uk-text-lead uk-text-muted uk-margin-remove-top">Receive even tighter spreads and commissions</p>
                             <hr>
                             <ul class="uk-list uk-list-bullet">
                                 <li>Award-winning trading platform*</li>
@@ -351,17 +345,43 @@
                                 <li>Advanced trading tools</li>
                                 <li>Tax-free spread betting profits</li>
                             </ul>
-                            <a href="/register"
-                                class="uk-button uk-button-primary uk-border-rounded uk-align-center">Open an account<i
-                                    class="fas fa-chevron-circle-right fa-xs uk-margin-small-left"></i></a>
+                            <a href="#" class="uk-button uk-button-primary uk-border-rounded uk-align-center">Open an account<i class="fas fa-chevron-circle-right fa-xs uk-margin-small-left"></i></a>
                         </div>
+                    </div> --}}
+                </div>
+            </div>
+            <div class="uk-width-1-1">
+                <div class="uk-grid-medium uk-child-width-1-2@s uk-child-width-1-5@m uk-text-center uk-margin-large-top" data-uk-grid>
+                    <div>
+                        <img src="img/in-lazy.gif" data-src="img/in-wave-award.svg" alt="wave-award" width="71" height="58" data-uk-img>
+                        <h6 class="uk-margin-small-top uk-margin-remove-bottom">Best CFD Broker</h6>
+                        <p class="uk-text-small uk-margin-remove-top">TradeON Summit 2020</p>
+                    </div>
+                    <div>
+                        <img src="img/in-lazy.gif" data-src="img/in-wave-award.svg" alt="wave-award" width="71" height="58" data-uk-img>
+                        <h6 class="uk-margin-small-top uk-margin-remove-bottom">Best Trading Experience</h6>
+                        <p class="uk-text-small uk-margin-remove-top">Jordan Forex EXPO 2020</p>
+                    </div>
+                    <div>
+                        <img src="img/in-lazy.gif" data-src="img/in-wave-award.svg" alt="wave-award" width="71" height="58" data-uk-img>
+                        <h6 class="uk-margin-small-top uk-margin-remove-bottom">Best Execution Broker</h6>
+                        <p class="uk-text-small uk-margin-remove-top">Forex EXPO Dubai 2020</p>
+                    </div>
+                    <div>
+                        <img src="img/in-lazy.gif" data-src="img/in-wave-award.svg" alt="wave-award" width="71" height="58" data-uk-img>
+                        <h6 class="uk-margin-small-top uk-margin-remove-bottom">Best Trading Platform</h6>
+                        <p class="uk-text-small uk-margin-remove-top">London Summit 2020</p>
+                    </div>
+                    <div class="uk-visible@m">
+                        <img src="img/in-lazy.gif" data-src="img/in-wave-award.svg" alt="wave-award" width="71" height="58" data-uk-img>
+                        <h6 class="uk-margin-small-top uk-margin-remove-bottom">Best Broker Asia</h6>
+                        <p class="uk-text-small uk-margin-remove-top">iFX EXPO 2020</p>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-</div> --}}
+</div>
 <!-- section content end -->
 <!-- section content begin -->
 <div class="uk-section in-equity-5">
@@ -410,6 +430,7 @@
     </div>
 </div>
 <!-- section content end -->
+
 <!-- section content begin -->
 <div class="uk-section uk-section-primary uk-preserve-color in-equity-6 uk-background-contain uk-background-center"
     data-src="{{asset('front/img/in-equity-decor-2.svg')}}" data-uk-img>
