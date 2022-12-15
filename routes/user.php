@@ -45,7 +45,8 @@ Route::middleware('onboarded')->group(function () {
 });
 
 Route::get('subscriptions', [SubscriptionController::class, 'plans'])->name('subscriptions.plans');
-Route::post('subscribe/{plan}', [SubscriptionController::class, 'subscribe'])->name('subscriptions.subscribe');
+Route::get('subscriptions/{slug}', [SubscriptionController::class, 'choosePlans'])->name('subscriptions.choosePlans');
+Route::post('store-subscription/{id}', [SubscriptionController::class, 'subscribeStore'])->name('subscriptions.subscribe');
 
 
 Route::prefix('onboard')->name('onboard.')->group(function () {

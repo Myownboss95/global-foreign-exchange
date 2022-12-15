@@ -67,7 +67,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> 
 
     <div class="p-2 col-md-3 col-sm-12">
       <div class="card shadow">
@@ -197,7 +197,7 @@
       <div class="card shadow">
         <div class="card-body m-3">
           <div class="row align-items-center">
-            <h4 class="mb-3">Recent Buy Trades</h4>
+            <h4 class="mb-3">Recent Subscriptions</h4>
             <div v-if="buyTrades.length">
               <div class="table-responsive">
                 <table class="table mb-0">

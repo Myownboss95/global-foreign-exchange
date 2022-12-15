@@ -32,6 +32,11 @@ class DashboardController extends Controller
         //return sell trades
         $sellTrades = $user->transactions()->where('type', 'sell')->limit(6)->get();
         $num_sellTrades = $user->transactions()->where('type', 'buy')->count();
+        $activeSubscription = $user->subscriptions();
+        // dd($activeSubscription);
+        // foreach($activeSubscription as $subs){
+        //      print_r($subs->user_id);
+        // };
 
         $trade_profits = $user->trades()->where('status', 'active')->sum('returns');
 

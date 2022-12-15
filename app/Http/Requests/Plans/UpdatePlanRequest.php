@@ -27,6 +27,7 @@ class UpdatePlanRequest extends FormRequest
         // dd($this->route('plan')->id);
         return [
             'name' => ['required', 'string', Rule::unique('plans')->ignore($this->route('plan'))],
+            'slug' => ['required', 'string', Rule::unique('plans')->ignore($this->route('plan'))],
             'tenure' => ['required', 'numeric'],
             'min_investment' => ['required', 'numeric'],
             'max_investment' => ['required', 'numeric'],

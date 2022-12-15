@@ -29,9 +29,12 @@
                     </div>
 
                     <div class="mt-4 pt-2">
-                        <FormButton class="btn btn-outline-primary w-100" @button-clicked="subscribe(plan.id)">
+                        <InertiaLink :href="route('user.subscriptions.choosePlans', plan.slug)" class="btn btn-outline-primary btn-sm w-100">
+                            Choose Plan
+                          </InertiaLink>
+                        <!-- <FormButton class="btn btn-outline-primary " @button-clicked="subscribe(plan.id)">
                             <ButtonLoader text="Choose Plan" />
-                        </FormButton>
+                        </FormButton> -->
                             <!-- Choose Plan -->
                     </div>
                 </div>
@@ -52,9 +55,9 @@ import { Inertia } from '@inertiajs/inertia';
 
 const props = defineProps([ 'plans' ]);
 
-const subscribe = id => {
-    Inertia.post(route('user.subscriptions.subscribe', id));
-}
+// const subscribe = id => {
+//     Inertia.post(route('user.subscriptions.subscribe', id));
+// }
 
 </script>
 

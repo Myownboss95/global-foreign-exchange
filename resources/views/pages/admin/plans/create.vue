@@ -15,6 +15,12 @@
             v-model="form.name"
           />
           <FormGroup
+            name="name"
+            placeholder="Slug"
+            label="Slug"
+            v-model="form.slug"
+          />
+          <FormGroup
             name="tenure"
             placeholder="Trade Tenure in days"
             label="Trade Tenure"
@@ -93,9 +99,10 @@ import { error } from '@/js/toast';
 
   const form = useForm({
     name: '',
+    slug: '',
     tenure: '',
     min_investment: '',
-      max_investment: '',
+    max_investment: '',
     bonus:'',
     demo: 0,
     features: [],

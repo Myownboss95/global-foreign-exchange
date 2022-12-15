@@ -57,7 +57,7 @@
 import { error } from '@/js/toast';
 
 const props = defineProps({
-    bot: Object,
+    bot: Object, 
   })
 
   const form = useForm({

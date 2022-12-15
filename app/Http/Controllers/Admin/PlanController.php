@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Plans\StorePlanRequest;
 use App\Http\Requests\Plans\UpdatePlanRequest;
 use DB;
+use Illuminate\Support\Str;
 
 class PlanController extends Controller
 {
@@ -28,7 +29,9 @@ class PlanController extends Controller
     {
         DB::beginTransaction();
         try {
-            $plan = Plan::create($request->except('features'));
+            $slug = Str::slug($request->input('slug'), '-');
+            $planRequest = array_merge($request->except('features'), ['slug'=>$slug]);
+            $plan = Plan::create($planRequest);
             $features = [];
             collect($request->only('features')['features'])
                 ->map(function ($item, $key) use ($plan, &$features) {
@@ -56,8 +59,10 @@ class PlanController extends Controller
     {
         DB::beginTransaction();
         try {
+            $slug = Str::slug($request->input('slug'), '-');
+            $planRequest = array_merge($request->except('features'), ['slug'=>$slug]);
             $plan->features()->delete();
-            $plan->update($request->except('features'));
+            $plan->update($planRequest);
             $features = [];
             collect($request->only('features')['features'])
                 ->map(function ($item, $key) use (&$features) {

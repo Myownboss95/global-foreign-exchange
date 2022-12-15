@@ -26,7 +26,9 @@ class Subscription extends Model
     {
         return $query->where('status', 'inactive');
     }
-
+    public function plans($plan_id){
+        return Plan::where('id', $plan_id)->first();
+    }
     public function user()
     {
         return $this->belongsTo(User::class);

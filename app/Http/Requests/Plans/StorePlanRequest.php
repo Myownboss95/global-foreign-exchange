@@ -25,6 +25,7 @@ class StorePlanRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'unique:plans'],
+            'slug' => ['required', 'string', 'unique:plans,slug'],
             'tenure' => ['required', 'numeric'],
             'min_investment' => ['required', 'numeric'],
             'max_investment' => ['required', 'numeric'],

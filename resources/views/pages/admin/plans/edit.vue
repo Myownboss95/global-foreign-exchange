@@ -15,6 +15,12 @@
             v-model="form.name"
           />
           <FormGroup
+            name="name"
+            placeholder="Slug"
+            label="Slug"
+            v-model="form.slug"
+          />
+          <FormGroup
             name="tenure"
             placeholder="Trade Tenure in days"
             label="Trade Tenure"
@@ -95,6 +101,7 @@ const props =  defineProps(['plan','features'])
 
   const form = useForm({
     name: props.plan.name,
+    slug: props.plan.slug,
     tenure: props.plan.tenure,
     min_investment: props.plan.min_investment,
     max_investment: props.plan.max_investment,
