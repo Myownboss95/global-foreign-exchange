@@ -20,4 +20,8 @@ class Plan extends Model
     {
         return $this->hasMany(PlanFeature::class, 'plan_id');
     }
+    public function subscriptions()
+    {
+        return $this->hasMany(Subscription::class);
+    }
 }

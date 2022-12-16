@@ -21,25 +21,17 @@ class DashboardController extends Controller
         $userInvestedBalance = $user->accountBalance('invested');
 
         //return withdrawals
-        $withdrawals = $user->transactions()->where('type', 'withdrawal')->limit(6)->get();
+        $withdrawals = $user->transactions()->where('type', 'withdrawal')->limit(5)->get();
         $num_withdrawals = $user->transactions()->where('type', 'withdrawal')->count();
        //return deposits
-        $deposits = $user->transactions()->where('type', 'deposit')->limit(6)->get();
+        $deposits = $user->transactions()->where('type', 'deposit')->limit(5)->get();
         $num_deposits = $user->transactions()->where('type', 'deposit')->count();
-        //return buy trades
-        $buyTrades = $user->transactions()->where('type', 'buy')->limit(6)->get();
-        $num_buyTrades = $user->transactions()->where('type', 'buy')->count();
-        //return sell trades
-        $sellTrades = $user->transactions()->where('type', 'sell')->limit(6)->get();
-        $num_sellTrades = $user->transactions()->where('type', 'buy')->count();
-        $activeSubscription = $user->subscriptions();
-        // dd($activeSubscription);
-        // foreach($activeSubscription as $subs){
-        //      print_r($subs->user_id);
-        // };
-
+        
+        $activeSubscription = $user->subscriptions()->with('plan')->limit(5)->get();
+        $numActiveSubscription =  $user->subscriptions()->count();
         $trade_profits = $user->trades()->where('status', 'active')->sum('returns');
-
+        // dd($activeSubscription);
+        
 
         return inertia('user.index', [
             'userMainBalance' => $userMainBalance,
@@ -49,12 +41,9 @@ class DashboardController extends Controller
             'withdrawals_count' => $num_withdrawals,
             'deposits' => $deposits,
             'deposits_count' => $num_deposits,
-            'buyTrades' => $buyTrades,
-            'num_buyTrades' => $num_buyTrades,
-            'sellTrades' => $sellTrades,
-            'num_sellTrades' => $num_sellTrades,
             'trade_profits' => $trade_profits,
-            'active_trades' => $user->trades()->where('status', 'active')->count()
+            'activeSubscription' => $activeSubscription,
+            'activeSubscription_count' => $numActiveSubscription
         ]);
     }
 }

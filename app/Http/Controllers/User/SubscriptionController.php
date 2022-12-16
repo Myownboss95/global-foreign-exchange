@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Plan;
+use App\Models\Subscription;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -56,6 +57,13 @@ class SubscriptionController extends Controller
             'plan' => $plan
         ]);
     }
+    public function active_subscriptions(){
+        $user = User::findOrFail(auth()->user()->id);
+        $activeSubscription = $user->subscriptions()->with('plan')->paginate(6);
+        return inertia('user.subscriptions.index', [
+            'activeSubscription' => $activeSubscription
+        ]);
+    }
 
     public function subscribeStore(Request $request, $id){
         $plan = Plan::findOrFail($id);
@@ -68,17 +76,32 @@ class SubscriptionController extends Controller
         $account = $user->accounts()->where('type', 'main')->first();
         $investedAccount = $user->accounts()->where('type', 'invested')->first();
         if ($amount >= $plan->min_investment && $amount <= $plan->max_investment) {
-            $account->account -= $amount;
-            $investedAccount->account += $amount;
-            $account->save();
-            $investedAccount->save();
+        //     $account->account -= $amount;
+        //     $investedAccount->account += $amount;
+        //     $account->save();
+        //     $investedAccount->save();
+        //     $user->subscriptions()->create([
+        //         'plan_id' => $plan->id,
+        //         'amount' => $amount,
+        //         'status' => 'active',
+        //         'expires_at' => Carbon::now()->addDays("$plan->tenure")->toDateTimeString(),
+        //     ]);
+            // dd(Subscription::find(9)->plans);
+
             $user->subscriptions()->create([
                 'plan_id' => $plan->id,
                 'amount' => $amount,
                 'status' => 'active',
-                'expires_at' => Carbon::now()->addDays("$plan->tenure")->toDateTimeString(),
+                'expires_at' => Carbon::now()->addDays("$plan->tenure")->toDateTimeString()
+
             ]);
+
+            // foreach($user->subscriptions as $sub){
+            //     $sub->plans()->attach($plan->id);
+            // };
+            
             session()->flash('success', 'Subscribed Successfully');
+
             return redirect()->route('user.index');
         } 
         else {

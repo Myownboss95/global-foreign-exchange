@@ -47,6 +47,12 @@
             :url="route(`${is_admin ? 'admin.plans.index' : 'user.subscriptions.plans'}`)"
             icon="package"
           />
+          <SidebarItem
+            name="My Subscriptions"
+            :url="route('user.subscriptions.active')"
+            icon="package"
+            v-if="!is_admin"
+          />
           <li class="menu-title">Transactions</li>
           <SidebarItem
             name="Deposits"

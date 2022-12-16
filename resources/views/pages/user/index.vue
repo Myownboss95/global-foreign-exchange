@@ -74,10 +74,10 @@
         <div class="card-body">
           <div class="row align-items-center">
             <div class="col-6">
-              <span class="text-muted mb-3 lh-1 d-block">Active Trades</span>
+              <span class="text-muted mb-3 lh-1 d-block">Active Subscriptions</span>
               <h4 class="mb-3">
                 <span class="counter-value" data-target="">
-                  {{ activeTrades }}</span
+                  {{ activeSubscription_count }}</span
                 >
               </h4>
             </div>
@@ -183,7 +183,7 @@
               }}
               more</span
             >
-            <!-- <span class="ms-1 text-muted font-size-13"><inertia-link href="#" >View More</inertia-link></span> -->
+           
           </div>
           <inertia-link
             :href="route('user.deposits.index')"
@@ -198,23 +198,23 @@
         <div class="card-body m-3">
           <div class="row align-items-center">
             <h4 class="mb-3">Recent Subscriptions</h4>
-            <div v-if="buyTrades.length">
+            <div v-if="activeSubscription.length">
               <div class="table-responsive">
                 <table class="table mb-0">
                   <thead class="table-light">
                     <tr>
                       <th>Amount</th>
-                      <th>Type</th>
-                      <th>Stop Loss</th>
+                      <th>Plan</th>
+                      <th>Bonus</th>
                       <th>Status</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="(buyTrade, key) in buyTrades" :key="key">
-                      <td>{{ buyTrade.amount }}</td>
-                      <td>{{ buyTrade.type }}</td>
-                      <td>{{ buyTrade.stop_loss }}</td>
-                      <td>{{ buyTrade.status }}</td>
+                    <tr v-for="(activeSubscriptions, key) in activeSubscription" :key="key">
+                      <td>{{ format_money(activeSubscriptions.amount) }}</td>
+                      <td>{{ activeSubscriptions.plan.name }} Plan</td>
+                      <td>{{ activeSubscriptions.plan.bonus }}%</td>
+                      <td>{{ activeSubscriptions.status }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -222,80 +222,30 @@
             </div>
             <div v-else>
               <span class="ms-1 text-muted font-size-13"
-                >No Transactions to Display</span
+                >No Active Subscriptions</span
               >
             </div>
           </div>
           <div class="text-nowrap mb-2">
             <span class="badge bg-soft-success text-success">
               {{
-                !isNaN(num_buyTrades) && num_buyTrades != 0
-                  ? num_buyTrades - 6
+                !isNaN(activeSubscription_count) && activeSubscription_count != 0
+                  ? activeSubscription_count - 5
                   : '0'
               }}
               more</span
             >
-            <!-- <span class="ms-1 text-muted font-size-13"><inertia-link href="#" >View More</inertia-link></span> -->
+             <span class="ms-1 text-muted font-size-13"><inertia-link href="#" >View More</inertia-link></span>
           </div>
           <inertia-link
             :href="route('user.trades.index')"
             class="btn btn-primary"
-            >View Trades<i class="mdi mdi-arrow-right ms-1"></i
+            >View Subscriptions<i class="mdi mdi-arrow-right ms-1"></i
           ></inertia-link>
         </div>
       </div>
-    </div>
-    <div class="p-2 col-md-6 col-sm-12">
-      <div class="card shadow">
-        <div class="card-body m-3">
-          <div class="row align-items-center">
-            <h4 class="mb-3">Recent Sell Trades</h4>
-            <div v-if="sellTrades.length">
-              <div class="table-responsive">
-                <table class="table mb-0">
-                  <thead class="table-light">
-                    <tr>
-                      <th>Amount</th>
-                      <th>Type</th>
-                      <th>Stop Loss</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="(sellTrade, key) in sellTrades" :key="key">
-                      <td>{{ sellTrade.amount }}</td>
-                      <td>{{ sellTrade.type }}</td>
-                      <td>{{ sellTrade.stop_loss }}</td>
-                      <td>{{ sellTrade.status }}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div v-else>
-              <span class="ms-1 text-muted font-size-13"
-                >No Transactions to Display</span
-              >
-            </div>
-          </div>
-          <div class="text-nowrap mb-2">
-            <span class="badge bg-soft-success text-success">
-              {{
-                !isNaN(num_sellTrades) && num_sellTrades != 0
-                  ? num_sellTrades - 6
-                  : '0'
-              }}
-              more</span
-            >
-          </div>
-          <inertia-link
-            :href="route('user.trades.index')"
-            class="btn btn-primary"
-            >View Trades<i class="mdi mdi-arrow-right ms-1"></i
-          ></inertia-link>
-        </div>
-      </div>
-    </div>
+    </div> 
+   
   </div>
 </template>
 
@@ -309,16 +259,13 @@
     userMainBalance: Number,
     userRefBalance: Number,
     userInvestedBalance: Number,
+    trade_profits: Number,
     withdrawals_count: Number,
     withdrawals: Object,
     deposits_count: Number,
     deposits: Object,
-    num_buyTrades: Number,
-    buyTrades: Object,
-    num_sellTrades: Number,
-    sellTrades: Object,
-    trade_profits: Number,
-    active_trades: Number,
+    activeSubscription: Object,
+    activeSubscription_count: Number
   });
   onMounted(() => {
     feather.replace();
@@ -332,12 +279,9 @@
   const withdrawals = computed(() => props.withdrawals);
   const deposits_count = computed(() => props.deposits_count);
   const deposits = computed(() => props.deposits);
-  const num_buyTrades = computed(() => props.num_buyTrades);
-  const buyTrades = computed(() => props.buyTrades);
-  const num_sellTrades = computed(() => props.num_sellTrades);
-  const sellTrades = computed(() => props.sellTrades);
-  const trade_profits = computed(() => props.trade_profits);
-  const activeTrades = computed(() => props.active_trades);
+  const activeSubscription = computed(() => props.activeSubscription);
+  const activeSubscription_count = computed(() => props.activeSubscription_count);
+  
 </script>
 
 
