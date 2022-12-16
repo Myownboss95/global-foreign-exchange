@@ -31,17 +31,19 @@ class EndTradeTenure extends Command
         $start_time = now();
         Subscription::with('user')->active()->expired()->chunk(50, function ($subscriptions) {
 
-            $subscriptions->map(function ($subscription, $key) {
+            $subscriptions->map(function (Subscription $subscription, $key) {
+
+                $percentage = ($subscription->plan->bonus / 100) * $subscription->amount + $subscription->amount;
 
                 $user = $subscription->user;
 
-                $this->line('closing active trades');
+                // $this->line('closing active trades');
 
-                $user->trades()
-                    ->active()->get()
-                    ->flatMap->close();
+                // $user->trades()
+                //     ->active()->get()
+                //     ->flatMap->close();
 
-                $this->info('closed active trades');
+                // $this->info('closed active trades');
 
                 $this->newLine(2);
 
@@ -53,7 +55,7 @@ class EndTradeTenure extends Command
 
                 $user->accounts()
                     ->where('type', 'main')
-                    ->increment('account', $invested_amount);
+                    ->increment('account', $percentage);
 
                 $user->accounts()
                     ->where('type', 'invested')
