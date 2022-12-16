@@ -108,12 +108,12 @@
             :url="route(`${is_admin ? 'admin' : 'user'}.bots.index`)"
             icon="cpu"
           /> -->
-          <SidebarItem
+          <!-- <SidebarItem
             name="Tradeable assets"
             :url="route('admin.tradeables.index')"
             icon="gift"
             v-if="is_admin"
-          />
+          /> -->
           <hr />
           <SidebarItem
             name="Logout"
