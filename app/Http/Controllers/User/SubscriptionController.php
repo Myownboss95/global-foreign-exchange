@@ -76,17 +76,17 @@ class SubscriptionController extends Controller
         $account = $user->accounts()->where('type', 'main')->first();
         $investedAccount = $user->accounts()->where('type', 'invested')->first();
         if ($amount >= $plan->min_investment && $amount <= $plan->max_investment) {
-        //     $account->account -= $amount;
-        //     $investedAccount->account += $amount;
-        //     $account->save();
-        //     $investedAccount->save();
-        //     $user->subscriptions()->create([
-        //         'plan_id' => $plan->id,
-        //         'amount' => $amount,
-        //         'status' => 'active',
-        //         'expires_at' => Carbon::now()->addDays("$plan->tenure")->toDateTimeString(),
-        //     ]);
-            // dd(Subscription::find(9)->plans);
+            $account->account -= $amount;
+            $investedAccount->account += $amount;
+            $account->save();
+            $investedAccount->save();
+            $user->subscriptions()->create([
+                'plan_id' => $plan->id,
+                'amount' => $amount,
+                'status' => 'active',
+                'expires_at' => Carbon::now()->addDays("$plan->tenure")->toDateTimeString(),
+            ]);
+          
 
             $user->subscriptions()->create([
                 'plan_id' => $plan->id,
@@ -96,9 +96,6 @@ class SubscriptionController extends Controller
 
             ]);
 
-            // foreach($user->subscriptions as $sub){
-            //     $sub->plans()->attach($plan->id);
-            // };
             
             session()->flash('success', 'Subscribed Successfully');
 
