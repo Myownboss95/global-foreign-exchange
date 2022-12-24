@@ -289,7 +289,7 @@
 <!-- slideshow content end -->
 
 <!-- section content begin -->
-<div class="uk-section uk-section-primary uk-preserve-color in-equity-1">
+<div class="uk-section uk-section-primary uk-preserve-color in-equity-1" style="padding-bottom: 40px;">
     <div class="uk-container">
         <div style="margin-bottom: 12px">
             <div style="display:flex; justify-content: space-between">
@@ -334,7 +334,7 @@
 </div>
 <!-- section content end -->
 <!-- section content begin -->
-<div class="uk-section in-equity-2 uk-background-contain uk-background-center" data-src="{{asset('front/img/in-equity-2-bg.png')}}" style="background-image:
+{{-- <div class="uk-section in-equity-2 uk-background-contain uk-background-center" data-src="{{asset('front/img/in-equity-2-bg.png')}}" style="background-image:
                                     url('{{asset('front/img/in-equity-2-bg.png')}}');"
     data-uk-img>
     <div class="uk-container uk-margin-top">
@@ -386,11 +386,11 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- section content end -->
 <!-- section content begin -->
-<div class="uk-section in-equity-3 in-offset-top-20">
-    <div class="uk-container uk-margin-large-bottom">
+<div class="uk-section in-equity-3 in-offset-top-20" >
+    <div class="uk-container uk-margin-large-bottom p-5" style="padding-top:120px">
         <div class="uk-grid uk-flex uk-flex-middle">
             <div class="uk-width-expand@m">
                 <h1 class="uk-margin-small-bottom">{{__('Tight spreads and')}} <span class="in-highlight">{{__('ultra-fast')}}</span>
@@ -407,7 +407,10 @@
             </div>
             <div class="uk-width-2xlarge uk-flex uk-flex-right uk-flex-center@s">
                 <div class="uk-card uk-card-body uk-card-default uk-border-rounded in-margin-top-60@s">
-                    <div id="tradingview-widget"></div>
+                    <div class="row">
+                        
+                    </div>
+                    {{-- <div id="tradingview-widget"></div> --}}
                 </div>
             </div>
         </div>
@@ -551,8 +554,8 @@
     <div class="uk-container uk-margin-small-bottom">
         <div class="uk-grid uk-flex uk-flex-center">
             <div class="uk-width-2xlarge@m uk-text-center">
-                <h1>{{__('Ready to get started?')}}</h1>
-                <p class="uk-text-lead">{{__('Global access to financial markets from a single account')}}</p>
+                <h1>{{__('Gain global access to financial stability')}}</h1>
+                <p class="uk-text-lead">{{__('Glofex gives every investor opportunities to choose from our varieties of plans to make informed decisions')}}</p>
             </div>
             <div class="uk-width-3-4@m uk-margin-medium-top">
                 <div class="uk-flex uk-flex-center uk-flex-middle button-app">
