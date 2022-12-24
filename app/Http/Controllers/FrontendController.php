@@ -60,7 +60,7 @@ class FrontendController extends Controller
             $error = 'Enter amount between $'. $plan->min_investment. ' - $'.$plan->max_investment. ' for this plan';
             return response()->json($error, 500);
         }
-        $roi = ($plan->bonus * $amount)+ $amount;
+        $roi = (($plan->bonus/100) * $amount)+ $amount;
         return response()->json([
             'roi' => $roi,
             'plan_tenure' =>$plan->tenure,
