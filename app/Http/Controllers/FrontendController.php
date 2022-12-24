@@ -17,7 +17,8 @@ class FrontendController extends Controller
     {
         $setting = Settings::first();
         $plans = Plan::oldest()->with('features')->get();
-        return view("$this->theme.home", compact('setting','plans'));
+        $popularplans= Plan::where('name', 'Premium')->orWhere('name', 'Silver')->with('features')->get();
+        return view("$this->theme.home", compact('setting','plans', 'popularplans'));
     }
 
     public function about()

@@ -57,7 +57,7 @@
           <SidebarItem
             name="Deposits"
             :url="route(`${is_admin ? 'admin' : 'user'}.deposits.index`)"
-            icon="credit-card"
+            icon="plus-circle"
           />
           <SidebarItem
             name="Withdrawals"

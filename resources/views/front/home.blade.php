@@ -15,8 +15,143 @@
                             <p class="in-badge-text uk-text-small uk-margin-remove-bottom uk-visible@m"><span
                                     class="uk-label uk-label-success in-label-small">{{__('New')}}
                                 </span>{{__('Trade the markets directly with leading trading platforms.')}}</p>
-                            <h1 class="uk-heading-small">{{__("The world's most")}} <span class="in-highlight">{{__('powerful')}}</span>
-                                {{__('trade app.')}}</h1>
+                            <h1 class="uk-heading-small">{{__("Buy, sell and invest  your ")}} <span class="in-highlight">{{__('coin')}}</span>
+                                {{__('to get  over 30% ROI')}}</h1>
+                            <p class="uk-text-lead uk-visible@m">
+                                {{__('Get the most accurate market data, alerts, conversions,tools and more — all within the same app.')}}
+                            </p>
+                            <div class="uk-grid-medium uk-child-width-1-3@m uk-child-width-1-2@s uk-margin-medium-top uk-visible@s"
+                                data-uk-grid data-market="TSLA,GOOGL,AAPL">
+                                <div>
+                                    <div
+                                        class="uk-card uk-card-small uk-card-secondary uk-card-body uk-border-rounded uk-flex uk-flex-middle">
+                                        <div class="in-symbol-logo">
+                                            <img src="{{asset('front/img/in-lazy.gif')}}" data-src="{{asset('front/img/in-symbol-tesla.svg')}}" alt="ticker"
+                                                width="28" height="28" data-uk-img>
+                                        </div>
+                                        <div class="in-price">
+                                            <h6 class="uk-margin-remove">TSLA<span class="uk-text-small"></span></h6>
+                                            <p class="uk-margin-remove"><span
+                                                    class="fas fa-spinner fa-xs"></span>loading...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div
+                                        class="uk-card uk-card-small uk-card-secondary uk-card-body uk-border-rounded uk-flex uk-flex-middle">
+                                        <div class="in-symbol-logo">
+                                            <img src="{{asset('front/img/in-lazy.gif')}}" data-src="{{asset('front/img/in-symbol-google.svg')}}"
+                                                alt="ticker" width="28" height="28" data-uk-img>
+                                        </div>
+                                        <div class="in-price">
+                                            <h6 class="uk-margin-remove">GOOGL<span class="uk-text-small"></span></h6>
+                                            <p class="uk-margin-remove"><span
+                                                    class="fas fa-spinner fa-xs"></span>loading...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uk-visible@m">
+                                    <div
+                                        class="uk-card uk-card-small uk-card-secondary uk-card-body uk-border-rounded uk-flex uk-flex-middle">
+                                        <div class="in-symbol-logo">
+                                            <img src="{{asset('front/img/in-lazy.gif')}}" data-src="{{asset('front/img/in-symbol-apple.svg')}}" alt="ticker"
+                                                width="28" height="28" data-uk-img>
+                                        </div>
+                                        <div class="in-price">
+                                            <h6 class="uk-margin-remove">AAPL<span class="uk-text-small"></span></h6>
+                                            <p class="uk-margin-remove"><span
+                                                    class="fas fa-spinner fa-xs"></span>loading...</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="in-slide-img">
+                            <img src="{{ asset('front/img/in-lazy.gif') }}"
+                                data-src="{{ asset('front/img/in-equity-slide-1.png') }}" alt="image-slide" style="height: 600px; width: auto" data-uk-img>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="uk-flex uk-flex-middle">
+                <div class="uk-container">
+                    <div class="uk-grid-large uk-flex-middle" data-uk-grid>
+                        <div class="uk-width-1-2@s in-slide-text">
+                            <p class="in-badge-text uk-text-small uk-margin-remove-bottom uk-visible@m">
+                                <span class="uk-label uk-label-success in-label-small">{{__('New')}}</span>
+                                {{__('Trade the markets directly with leading trading platforms.')}}
+                            </p>
+                            <h1 class="uk-heading-small">{{__('The world most powerful crypto ')}} <span
+                                    class="in-highlight">{{__('investment platform.')}}</span></h1>
+                            <p class="uk-text-lead uk-visible@m">
+                                {{__('Guarantees returns on investment')}}</p>
+                            <div class="uk-grid-medium uk-child-width-1-3@m uk-child-width-1-2@s uk-margin-medium-top uk-visible@s"
+                                data-uk-grid data-market="MCD,AMZN,MSFT">
+                                <div>
+                                    <div
+                                        class="uk-card uk-card-small uk-card-secondary uk-card-body uk-border-rounded uk-flex uk-flex-middle">
+                                        <div class="in-symbol-logo">
+                                            <img src="{{ asset('front/img/in-lazy.gif') }}"
+                                                data-src="{{ asset('front/img/in-symbol-mcdonalds.svg') }}" alt="ticker"
+                                                width="28" height="28" data-uk-img>
+                                        </div>
+                                        <div class="in-price">
+                                            <h6 class="uk-margin-remove">MCD<span class="uk-text-small"></span></h6>
+                                            <p class="uk-margin-remove"><span
+                                                    class="fas fa-spinner fa-xs"></span>loading...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div
+                                        class="uk-card uk-card-small uk-card-secondary uk-card-body uk-border-rounded uk-flex uk-flex-middle">
+                                        <div class="in-symbol-logo">
+                                            <img src="{{ asset('front/img/in-lazy.gif') }}"
+                                                data-src="{{ asset('front/img/in-symbol-amazon.svg') }}" alt="ticker"
+                                                width="28" height="28" data-uk-img>
+                                        </div>
+                                        <div class="in-price">
+                                            <h6 class="uk-margin-remove">AMZN<span class="uk-text-small"></span></h6>
+                                            <p class="uk-margin-remove"><span
+                                                    class="fas fa-spinner fa-xs"></span>loading...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uk-visible@m">
+                                    <div
+                                        class="uk-card uk-card-small uk-card-secondary uk-card-body uk-border-rounded uk-flex uk-flex-middle">
+                                        <div class="in-symbol-logo">
+                                            <img src="{{ asset('front/img/in-lazy.gif') }}"
+                                                data-src="{{ asset('front/img/in-symbol-microsoft.svg') }}" alt="ticker"
+                                                width="28" height="28" data-uk-img>
+                                        </div>
+                                        <div class="in-price">
+                                            <h6 class="uk-margin-remove">MSFT<span class="uk-text-small"></span></h6>
+                                            <p class="uk-margin-remove"><span
+                                                    class="fas fa-spinner fa-xs"></span>loading...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="in-slide-img">
+                            <img src="{{ asset('front/img/in-lazy.gif') }}"
+                                data-src="{{ asset('front/img/in-equity-slide-2.png') }}" alt="image-slide"
+                                data-uk-img style="height: 600px; width: auto">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="uk-flex uk-flex-middle">
+                <div class="uk-container">
+                    <div class="uk-grid-large uk-flex-middle" data-uk-grid>
+                        <div class="uk-width-1-2@s in-slide-text">
+                            <p class="in-badge-text uk-text-small uk-margin-remove-bottom uk-visible@m"><span
+                                    class="uk-label uk-label-success in-label-small">{{__('New')}}
+                                </span>{{__('Invest the markets directly with our investment platforms')}}</p>
+                            <h1 class="uk-heading-small">{{__("With our well structured plan you can invest with little money of")}} <span class="in-highlight">{{__('$100')}}</span></h1>
                             <p class="uk-text-lead uk-visible@m">
                                 {{__('Get the most accurate market data, alerts, conversions,tools and more — all within the same app.')}}
                             </p>
@@ -80,12 +215,12 @@
                         <div class="uk-width-1-2@s in-slide-text">
                             <p class="in-badge-text uk-text-small uk-margin-remove-bottom uk-visible@m">
                                 <span class="uk-label uk-label-success in-label-small">{{__('New')}}</span>
-                                {{__('Trade the markets directly with leading trading platforms.')}}
+                                {{__('Invest in markets directly with our leading investment platform.')}}
                             </p>
-                            <h1 class="uk-heading-small">{{__('Reach out to new trading')}} <span
-                                    class="in-highlight">{{__('experience.')}}</span></h1>
+                            <h1 class="uk-heading-small">{{__('Enjoy over ')}} <span
+                                    class="in-highlight">{{__('30% bonus ')}}</span>{{__('on a single investment')}}</h1>
                             <p class="uk-text-lead uk-visible@m">
-                                {{__('Bring your trading ventures go around the world, way  beyond the space of your trading account.')}}</p>
+                                {{__('Bring your Investment way  beyond the space of your investment account.')}}</p>
                             <div class="uk-grid-medium uk-child-width-1-3@m uk-child-width-1-2@s uk-margin-medium-top uk-visible@s"
                                 data-uk-grid data-market="MCD,AMZN,MSFT">
                                 <div>
@@ -164,57 +299,36 @@
                 </a>
             </div>
         </div>
-        <div class="uk-grid-match uk-grid-medium uk-child-width-1-4@m uk-child-width-1-2@s uk-margin-bottom"
+        <div class="uk-grid-match uk-grid-medium uk-child-width-1-2@m uk-child-width-1-2@s uk-margin-bottom"
             data-uk-grid>
+            @foreach ($popularplans as $popplan)
+                
+            
             <div>
                 <div class="uk-card uk-card-body uk-card-default uk-border-rounded">
                     <div class="uk-flex uk-flex-middle">
-                        <span class="in-product-name red">EQ</span>
-                        <h5 class="uk-margin-remove">Stocks</h5>
+                        <span class="in-product-name @if ($popplan->name == 'Premium')
+                            red 
+                            @else green
+                        @endif
+                        ">{{ Str::substr(Str::upper($popplan->name), 0, 2) }}</span>
+                        <h5 class="uk-margin-remove">{{ $popplan->name }} Plan</h5>
                     </div>
-                    <p>{{__('Access 19,000+ stocks across core and emerging markets on 40+ exchanges worldwide.')}}</p>
+                    <ul class="uk-list uk-list-bullet">
+                        <li> {{ $popplan->tenure}} days trading tenure.</li>
+                        <li>{{ $popplan->bonus}}% investment bonus</li>
+                        @foreach ($popplan->features as $featuresP )
+                        <li>{{ $featuresP->name }}</li>
+                        @endforeach
+                        
+                    </ul>
                     <a href="/register"
                         class="uk-button uk-button-text uk-float-right uk-position-bottom-right">{{__('Get Started')}}<i
                             class="fas fa-arrow-circle-right uk-margin-small-left"></i></a>
                 </div>
             </div>
-            <div>
-                <div class="uk-card uk-card-body uk-card-default uk-border-rounded">
-                    <div class="uk-flex uk-flex-middle">
-                        <span class="in-product-name green">LQ</span>
-                        <h5 class="uk-margin-remove">{{__('Listed Options')}}</h5>
-                    </div>
-                    <p>{{__('Access 1,200+ listed options across equities, indices, interest rates, energy, metals and more.')}}
-                    </p>
-                    <a href="/register"
-                        class="uk-button uk-button-text uk-float-right uk-position-bottom-right">Get Started<i
-                            class="fas fa-arrow-circle-right uk-margin-small-left"></i></a>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-body uk-card-default uk-border-rounded">
-                    <div class="uk-flex uk-flex-middle">
-                        <span class="in-product-name blue">FU</span>
-                        <h5 class="uk-margin-remove">{{__('Futures')}}</h5>
-                    </div>
-                    <p>{{__('Access 300+ futures covering equity indices, energy, metals, agriculture, rates and more.')}}</p>
-                    <a href="/register"
-                        class="uk-button uk-button-text uk-float-right uk-position-bottom-right">{{__('Get Started')}}<i
-                            class="fas fa-arrow-circle-right uk-margin-small-left"></i></a>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-body uk-card-default uk-border-rounded">
-                    <div class="uk-flex uk-flex-middle">
-                        <span class="in-product-name"><i class="fas fa-ellipsis-h fa-xs"></i></span>
-                        <h5 class="uk-margin-remove">{{__('More products')}}</h5>
-                    </div>
-                    <p>{{__('Get Started the full range of cash and leveraged products')}}</p>
-                    <a href="/register"
-                        class="uk-button uk-button-text uk-float-right uk-position-bottom-right">Get Started<i
-                            class="fas fa-arrow-circle-right uk-margin-small-left"></i></a>
-                </div>
-            </div>
+            
+            @endforeach
         </div>
     </div>
 </div>

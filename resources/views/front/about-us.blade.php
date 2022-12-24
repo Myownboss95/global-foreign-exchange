@@ -4,9 +4,9 @@
         <div class="uk-grid">
             <div class="uk-width-1-1">
                 <div class="uk-width-3-5@m">
-                    <h1 class="uk-margin-small-bottom">{{__('Putting our clients first')}} <span class="in-highlight">{{__('since 2001')}}</span></h1>
+                    <h1 class="uk-margin-small-bottom">{{__('Putting our clients first')}} <span class="in-highlight">{{__('since 2019')}}</span></h1>
                     <p class="uk-text-lead uk-text-muted uk-margin-remove-top">
-                        {{__('For more than 30 years, we’ve been empowering clients by helping them take control of their financial lives.')}}
+                        {{__('For more than 3 years, we’ve been empowering clients by helping them take control of their financial lives.')}}
                     </p>
                 </div>
             </div>
@@ -18,7 +18,7 @@
                     <div>
                         <h3>{{__('Philosophy')}}</h3>
                         <p>
-                            {{__('Profiitrend empowers every trader to master the arts of Forex Trading and Crypto Trading, and Robot Trading.')}}
+                            {{__('Glofex empowers every investor to master the arts of investing in Forex ')}}
                         </p>
                     </div>
                 </div>
