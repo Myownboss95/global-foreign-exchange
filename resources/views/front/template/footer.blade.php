@@ -1,4 +1,45 @@
 <footer>
+    <script>
+        window.addEventListener("load", function(){
+            document.getElementById('amount').value = '';
+            document.getElementById('plan_id').value = '';
+        });
+        $('form').on('submit', function(e) {
+            e.preventDefault();
+            $('input+small').text('');
+            $('input').parent().removeClass('has-error');
+
+        $.ajax(`/calculate-roi`, {
+        type: 'POST',
+        data: {
+            "_token": "{{ csrf_token() }}",
+            'amount': $('#amount').val(),
+            'plan_id': $('#plan_id').val()
+
+        },
+        success: function(data, status, xhr) {
+            alertMessages(data.roi, data.plan_tenure)
+        },
+        error: function(xhr, status, error){
+            alertError(eval(xhr.responseText))
+        }
+    })
+    });
+
+    function alertMessages(roi, plan_tenure){
+        $('#displayResult').html(
+            '<div class="alert alert-secondary alert-dismissible fade show alertCartR" role="alert" id="#alertCartR"><h4> Your return on investment is $'+ roi +' after a period of ' + plan_tenure + ' days</h4></div>'
+        )
+    }
+        function alertError(errors){
+           
+                 
+                $('#displayResult').html(
+                    '<div class="alert alert-secondary alert-dismissible fade show alertCartR" role="alert" id="#alertCartR"><h4 style="color:red">' + errors + '</h4></div>'
+                );
+        
+    }
+        </script>
     <!-- footer content begin -->
     <div class="uk-section">
         <hr class="uk-margin-large">
@@ -92,7 +133,7 @@
             var country = listCountries[Math.floor(Math.random() * listCountries.length)];
             var plan = listPlans[Math.floor(Math.random() * listPlans.length)];
             var msg = 'Someone from <b>' + country +
-                '</b> just traded with <a href="javascript:void(0);" onclick="javascript:void(0);">' + plan + ' .</a>';
+                '</b> just invested with <a href="javascript:void(0);" onclick="javascript:void(0);">' + plan + ' .</a>';
 
             $(".mgm .txt").html(msg);
             $(".mgm").stop(true).fadeIn(300);

@@ -393,10 +393,9 @@
     <div class="uk-container uk-margin-large-bottom p-5" style="padding-top:120px">
         <div class="uk-grid uk-flex uk-flex-middle">
             <div class="uk-width-expand@m">
-                <h1 class="uk-margin-small-bottom">{{__('Tight spreads and')}} <span class="in-highlight">{{__('ultra-fast')}}</span>
-                    {{__('execution')}}</h1>
+                <h1 class="uk-margin-small-bottom">{{__('Investment ')}} <span class="in-highlight">{{__(' Calculator')}}</span></h1>
                 <h3 class="uk-margin-top uk-text-warning">
-                    {{__('Best market prices available so you can receive excellent conditions.')}}
+                    {{__('Calculate your potential investment earnings here')}}
                 </h3>
                 <hr class="uk-margin-medium-top uk-margin-medium-bottom">
                 <ul class="uk-list in-list-check">
@@ -408,7 +407,47 @@
             <div class="uk-width-2xlarge uk-flex uk-flex-right uk-flex-center@s">
                 <div class="uk-card uk-card-body uk-card-default uk-border-rounded in-margin-top-60@s">
                     <div class="row">
-                        
+                        <div class="col-12" >
+                            <form
+                                    id="contact-form"
+                                    class="uk-form uk-grid-small"
+                                    data-uk-grid
+                                    style="padding:80px 20px 80px 20px;"
+                                >
+                                    <div class="uk-width-1-1@s uk-inline">
+                                        <span class="uk-form-icon fas fa-pen fa-sm"></span>
+                                        <input
+                                            class="uk-input uk-border-rounded"
+                                            id="amount"
+                                            name="amount"
+                                            type="number"
+                                            required
+                                            placeholder="{{ __('Amount to Invest') }}"
+                                        >
+                                        <small class="help-block"></small>
+                                    </div>
+                                <div class="uk-width-1-1@s uk-inline">
+                                    <span class="uk-form-icon fas fa-envelope fa-sm"></span>
+                                    <select id="plan_id" class="uk-input uk-border-rounded" required>
+                                        <option value="">Select Plan</option>
+                                        @foreach ( $plans as $list )
+                                        <option value="{{$list->id}}">{{$list->name}} Plan</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <button
+                                        class="uk-button uk-button-primary uk-border-rounded uk-align-right"
+                                        id="calculateRoi"
+                                        type="submit"
+                                        name="submit"
+                                    >{{ __('Calculate ROI') }}</button>
+                                </div>
+                                <div id="displayResult"></div>
+                            </form>
+                            
+
+                        </div>
                     </div>
                     {{-- <div id="tradingview-widget"></div> --}}
                 </div>

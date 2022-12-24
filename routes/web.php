@@ -70,6 +70,7 @@ $theme = config('app.theme', 'front2');
 if ($theme != 'front3') {
     Route::controller(FrontendController::class)->group(function () {
         Route::get('/', "home")->name('front.index');
+        Route::post('/calculate-roi', "calculateRoi");
         Route::get('/about-us', "about");
         Route::get('/contact-us', "contact")->name('front.contact');
         Route::get('/terms-and-conditions', "terms_and_conditions");
