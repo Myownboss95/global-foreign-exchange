@@ -458,6 +458,23 @@
 <!-- section content end -->
 {{-- testimonial --}}
 <div class="container-fluid p-5">
+    <div class="p-5">
+        <div class="uk-container uk-margin-large-bottom p-5" style="padding-top:120px">
+        <div class="uk-grid uk-flex uk-flex-middle">
+            <div class="uk-width-expand@m">
+    <h1 class="uk-margin-small-bottom">{{__('Clients ')}} <span class="in-highlight">{{__(' Testimonials')}}</span></h1>
+                <h3 class="uk-margin-top uk-text-warning">
+                    {{__('See what our clients are saying')}}
+                </h3>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+
     @include('front.testimonials')
 </div>
 {{-- end testimonial --}}
