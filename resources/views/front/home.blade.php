@@ -456,6 +456,11 @@
     </div>
 </div>
 <!-- section content end -->
+{{-- testimonial --}}
+<div class="container-fluid p-5">
+    @include('front.testimonials')
+</div>
+{{-- end testimonial --}}
 <!-- section content begin -->
 <div class="uk-section uk-padding-large">
     <div class="uk-container in-wave-4">

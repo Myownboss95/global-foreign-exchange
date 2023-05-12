@@ -3,103 +3,48 @@
 
 <head>
     <!-- Standard Meta -->
-    <meta
-        http-equiv="content-type"
-        content="text/html;charset=UTF-8"
-    />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8">
-    <meta
-        name="description"
-        content="{{ config('app.name') }} Cryptocurrency, Forex Broker"
-    >
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1"
-    >
-    <meta
-        name="theme-color"
-        content="#FCB42D"
-    />
-    <meta name="og:image" content="{{asset(config('app.favicon'))}}" >
+    <meta name="description" content="{{ config('app.name') }} Cryptocurrency, Forex Broker">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#FCB42D" />
+    <meta name="og:image" content="{{ asset(config('app.favicon')) }}">
     <!-- Site Properties -->
     <title>{{ config('app.name') }}</title>
     <!-- critical preload -->
-    <link
-        rel="preload"
-        href="{{ asset('front/js/vendors/uikit.min.js') }}"
-        as="script"
-    >
-    <link
-        rel="preload"
-        href="{{ asset('front/css/vendors/uikit.min.css') }}"
-        as="style"
-    >
-    <link
-        rel="preload"
-        href="{{ asset('front/css/style.css') }}"
-        as="style"
-    >
-    <!-- icon preload -->
-    <link
-        rel="preload"
-        href="{{ asset('front/fonts/fa-brands-400.woff2') }}"
-        as="font"
-        type="font/woff2"
-        crossorigin
-    >
-    <link
-        rel="preload"
-        href="{{ asset('front/fonts/fa-solid-900.woff2') }}"
-        as="font"
-        type="font/woff2"
-        crossorigin
-    >
-    <!-- font preload -->
-    <link
-        rel="preload"
-        href="{{ asset('front/fonts/archivo-v9-latin-regular.woff2') }}"
-        as="font"
-        type="font/woff2"
-        crossorigin
-    >
-    <link
-        rel="preload"
-        href="{{ asset('front/fonts/archivo-v9-latin-300.woff2') }}"
-        as="font"
-        type="font/woff2"
-        crossorigin
-    >
-    <link
-        rel="preload"
-        href="{{ asset('front/fonts/archivo-v9-latin-700.woff2') }}"
-        as="font"
-        type="font/woff2"
-        crossorigin
-    >
-    <!-- Favicon and apple icon -->
-    <link
-        rel="shortcut icon"
-        href="{{ asset(config('app.favicon')) }}"
-        type="image/x-icon"
-    >
-    <link
-        rel="{{ asset(config('app.favicon')) }}"
-        href="{{ asset(config('app.favicon')) }}"
-    >
-    <!-- css -->
-    <link
-        rel="stylesheet"
-        href="{{ asset('front/css/vendors/uikit.min.css') }}"
-    >
-    <link
-        rel="stylesheet"
-        href="{{ asset('front/css/style.css') }}"
-    >
+    {{-- slider for testimonials --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
 
-    <script
-        type="text/javascript"
-        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    ></script>
+    <style type="text/css">
+        .no-fouc {
+            display: none;
+        }
+    </style>
+    {{-- end --}}
+    <link rel="preload" href="{{ asset('front/js/vendors/uikit.min.js') }}" as="script">
+    <link rel="preload" href="{{ asset('front/css/vendors/uikit.min.css') }}" as="style">
+    <link rel="preload" href="{{ asset('front/css/style.css') }}" as="style">
+    <!-- icon preload -->
+    <link rel="preload" href="{{ asset('front/fonts/fa-brands-400.woff2') }}" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" href="{{ asset('front/fonts/fa-solid-900.woff2') }}" as="font" type="font/woff2"
+        crossorigin>
+    <!-- font preload -->
+    <link rel="preload" href="{{ asset('front/fonts/archivo-v9-latin-regular.woff2') }}" as="font"
+        type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ asset('front/fonts/archivo-v9-latin-300.woff2') }}" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" href="{{ asset('front/fonts/archivo-v9-latin-700.woff2') }}" as="font" type="font/woff2"
+        crossorigin>
+    <!-- Favicon and apple icon -->
+    <link rel="shortcut icon" href="{{ asset(config('app.favicon')) }}" type="image/x-icon">
+    <link rel="{{ asset(config('app.favicon')) }}" href="{{ asset(config('app.favicon')) }}">
+    <!-- css -->
+    <link rel="stylesheet" href="{{ asset('front/css/vendors/uikit.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/style.css') }}">
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
 
     <script type="text/javascript">
         window.googleTranslateElementInit = () => {
@@ -109,20 +54,22 @@
             }, 'google_translate_element');
         }
     </script>
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> --}}
     <style>
-        body>div.skiptranslate{
+        body>div.skiptranslate {
             display: none;
             visibility: hidden;
             height: 0;
-            width:0;
+            width: 0;
         }
 
         body {
             top: 0 !important;
         }
-        ['id' = ':0.targetLanguage'] span {
+
+        ['id'=':0.targetLanguage'] span {
             display: none;
         }
     </style>
@@ -140,32 +87,17 @@
     <!-- preloader end -->
     <header>
         <!-- header content begin -->
-        <div
-            class="uk-section uk-padding-remove-vertical"
-            style="background-color: black"
-        >
-            <nav
-                class="uk-navbar-container uk-navbar-transparent"
-                data-uk-sticky="show-on-up: true; animation: uk-animation-slide-top;"
-            >
-                <div
-                    class="uk-container"
-                    data-uk-navbar
-                >
+        <div class="uk-section uk-padding-remove-vertical" style="background-color: black">
+            <nav class="uk-navbar-container uk-navbar-transparent"
+                data-uk-sticky="show-on-up: true; animation: uk-animation-slide-top;">
+                <div class="uk-container" data-uk-navbar>
                     <div class="uk-navbar-left">
                         <div class="uk-navbar-item">
                             <!-- logo begin -->
-                            <a
-                                class="uk-logo"
-                                href="/"
-                            >
-                                <img
-                                    src="{{ asset('front/img/in-lazy.gif') }}"
-                                    data-src="{{ asset(config('app.logo')) }}"
-                                    alt="logo"
-                                    style="width:100px; height: auto;"
-                                    data-uk-img
-                                >
+                            <a class="uk-logo" href="/">
+                                <img src="{{ asset('front/img/in-lazy.gif') }}"
+                                    data-src="{{ asset(config('app.logo')) }}" alt="logo"
+                                    style="width:100px; height: auto;" data-uk-img>
                             </a>
                             <!-- logo end -->
                             <!-- navigation begin -->
@@ -236,14 +168,11 @@
                             </div>
                         </div> --}}
                         <div class="uk-navbar-item uk-visible@m in-optional-nav">
-                            <a
-                                href="/login"
-                                class="uk-button uk-button-text"
-                            >{{ __('Log in') }}<i class="fas fa-arrow-circle-right uk-margin-small-left"></i></a>
-                            <a
-                                href="/register"
-                                class="uk-button uk-button-primary uk-border-rounded"
-                            >{{ __('Sign up') }}<i class="fas fa-arrow-circle-right uk-margin-small-left"></i></a>
+                            <a href="/login" class="uk-button uk-button-text">{{ __('Log in') }}<i
+                                    class="fas fa-arrow-circle-right uk-margin-small-left"></i></a>
+                            <a href="/register"
+                                class="uk-button uk-button-primary uk-border-rounded">{{ __('Sign up') }}<i
+                                    class="fas fa-arrow-circle-right uk-margin-small-left"></i></a>
                         </div>
                     </div>
                 </div>
