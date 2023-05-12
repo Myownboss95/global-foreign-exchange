@@ -49,7 +49,7 @@
       font-family: Baskerville;
       color: #ffffff;
       padding: 25px;
-      font-size: 45px;
+      font-size: 35px;
       font-style: italic;
       text-align: center;
     }
@@ -135,13 +135,16 @@
       opacity: 1;
       z-index: 99999;
     }
+    .panel{
+        font-size: 19px
+    }
   </style>
   <div class="bg">
     </bg>
 
     <section role="complementary" id="testimonial-videos" class="simple quotes no-fouc">
       <blockquote id="agedcare" class="current">
-        <p class="text-md">“I'm impressed with GLOFEX's fast and reliable trades. Their team always provides me with the best investment options.”</p>
+        <p class="text-md panel">“I'm impressed with GLOFEX's fast and reliable trades. Their team always provides me with the best investment options.”</p>
         <cite>Henry Caville, Hollywood Celebrity</cite>
         <img src="https://kingkong.com.au/wp-content/uploads/2017/03/play-button.png" class="play-button">
 
@@ -153,7 +156,7 @@
 
       </blockquote>
       <blockquote id="ensohomes">
-        <p class="text-md">“GLOFEX's investment strategies are top-notch. They helped me grow my portfolio in just a few months.”
+        <p class="text-md panel">“GLOFEX's investment strategies are top-notch. They helped me grow my portfolio in just a few months.”
         </p>
         <cite>Dwayne Johnson, Hollywood Celebrity</cite>
         <img src="https://kingkong.com.au/wp-content/uploads/2017/03/play-button.png" class="play-button">
@@ -166,7 +169,7 @@
 
       </blockquote>
       <blockquote id="breathe">
-        <p class="text-md">“As a professional investor, I was skeptical at first. But GLOFEX's knowledgeable staff made me feel comfortable and helped me make sound investment decisions.”.</p>
+        <p class="text-md panel">“As a professional investor, I was skeptical at first. But GLOFEX's knowledgeable staff made me feel comfortable and helped me make sound investment decisions.”.</p>
         <cite>Ariana Grande, Celebrity Artiste</cite>
         <img src="https://kingkong.com.au/wp-content/uploads/2017/03/play-button.png" class="play-button">
 
@@ -178,7 +181,7 @@
 
       </blockquote>
       <blockquote id="test">
-        <p class="text-md">“GLOFEX's customer support is fantastic. They are always available to answer any questions or concerns I have, and their expertise in investment and trading is evident.”.</p>
+        <p class="text-md panel">“GLOFEX's customer support is fantastic. They are always available to answer any questions or concerns I have, and their expertise in investment and trading is evident.”.</p>
         <cite>Elon Musk, CEO Tesla Motors</cite>
         <img src="https://kingkong.com.au/wp-content/uploads/2017/03/play-button.png" class="play-button">
       
