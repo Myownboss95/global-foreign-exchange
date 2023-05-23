@@ -1,4 +1,6 @@
 <footer>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-39836a70-3a14-47b0-96bf-b8f4e9c11cb1"></div>
     <script>
         window.addEventListener("load", function() {
             document.getElementById('amount').value = '';

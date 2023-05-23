@@ -635,6 +635,7 @@
         </div>
     </div>
 </div>
+
 <!-- section content end -->
 </main>
 @include('front.template.footer')
